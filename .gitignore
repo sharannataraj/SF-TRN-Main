@@ -1,76 +1,74 @@
-# This file is used for Git repositories to specify intentionally untracked files that Git should ignore. 
-# If you are not using git, you can delete this file. For more information see: https://git-scm.com/docs/gitignore
-# For useful gitignore templates see: https://github.com/github/gitignore
+# Excluded Managed Package Metadata
+# Still allows customization, but doesn't track unchangeable files
+# Add all installed managed packages to this list
+# Excluded Managed Packages - non editable components
+# Wildcard for All Managed Packages: If you want to exclude all managed packages 
+# regardless of their namespace, you can use a wildcard pattern that matches any file 
+# containing two underscores, which is a common convention for namespaced components 
+# in Salesforce:
+#*__*
+# Ignore any component containing namespace__
+#*namespace__*
+*OIQ__*
+*ssot__*
+*cdpactvstrgptnr__*
+# Copado Deployer base package
+**/classes/copado__*
+**/triggers/copado__*
+**/pages/copado__*
+# Copado CICD for Source Format Pipelines
+**/classes/cmcSf__*
+**/triggers/cmcSf__*
+**/pages/cmcSf__*
+# Copado Quality Integration Framework
+**/classes/copadoQuality__*
+**/triggers/copadoQuality__*
+**/pages/copadoQuality__*
+# Excluded Metadata Types - Performance / Data-like
+**/documents/*
+# **/dashboards/*
+**/installedPackages/*
+# **/reports/*
+# **/staticresources/*
 
-# Salesforce cache
-.sf/
+# Excluded Metadata Types - Security
+**/authprovider/*
+**/samlssoconfigs/*
+# Excluded Metadata Types - Obsolete as of API v44
+**/flowdefinitions/*
+
+# Default SFDX - Dreamhouse .gitignore content
+# Salesforce dev
 .sfdx/
 .localdevserver/
-deploy-options.json
-
 # LWC VSCode autocomplete
-**/lwc/jsconfig.json
-
+jsconfig.json
 # LWC Jest coverage reports
 coverage/
-
 # Logs
 logs
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
 # Dependency directories
 node_modules/
-
 # Eslint cache
 .eslintcache
-
 # MacOS system files
 .DS_Store
-
 # Windows system files
 Thumbs.db
 ehthumbs.db
 [Dd]esktop.ini
 $RECYCLE.BIN/
-
-# Local environment variables
-.env
-
-# Python Salesforce Functions
-**/__pycache__/
-**/.venv/
-**/venv/
-
-.copado
-# Local editor configuration folders specific to a local setup
-# There are more editors, but those two are some of the most used ones
-.idea
-.vscode
-# Managed package Apex Classes are wholly protected and not versionable
-**/classes/*__*.*
-# Managed package Apex Triggers are wholly protected and not versionable
-**/triggers/*__*.*
-# Managed package Visualforce Pages are wholly protected and not versionable
-**/pages/*__*.*
-# Managed package Visualforce Components are wholly protected and not versionable
-**/components/*__*.*
-# Managed package Custom Metadata are wholly protected and not versionable
-**/customMetadata/*__*.*
-# Managed package Custom Permissions are wholly protected and not versionable
-**/customPermissions/*__*.*
-# Managed package Flexipages are wholly protected and not versionable
-**/flexipages/*__*.*
-# Managed package Flows are wholly protected and not versionable
-**/flows/*__*.*
-# Managed package Permission Sets are wholly protected and not versionable
-**/permissionsets/*__*.*
-# additional metadata types
-**/flowDefinitions/**
-**/staticresources/**
-**/documents/**
-#**/installedPackages/**
-#**/dashboards/**
-#**/reports/**
+# VS Code project settings
+.vscode/*
+!.vscode/extensions.json
+.pmdCache
+/scan_results.csv
+/quickstart.sh
+# Other
+.sf/
+.copado/
+.config
